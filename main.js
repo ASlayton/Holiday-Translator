@@ -33,3 +33,9 @@ var languageObject =
   it:	       ["eso", "es", "gi", "\'oH"],
   snow:      ["nieve", "schnee", "nego", "peD"]
 };
+
+//SIMPLE WRITE TO DOM FUNCTION
+function writeToDom(myInnerds, myElement){
+  var theElementToWriteTo = document.getElementById(myElement);
+  theElementToWriteTo.innerHTML = myInnerds;
+};
