@@ -77,4 +77,6 @@ function translatePhrase(translatorObject, buttonPushed){
     };
   };
   writeToDom(textToInsert, "translatedText");              //output our result
+  
+  generateACard();
 };
