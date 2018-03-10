@@ -1,0 +1,27 @@
+/* GENERAL STYLING */
+  body{
+    background-color: aquamarine;
+    color: maroon;
+    margin: 0;
+  }
+
+  section#generatedCard {
+    width: 600px;
+    height: 400px;
+    background-color: forestgreen;
+  }
+
+  section, div {
+    margin: 10px;
+  }
+/* HEADER/FOOTER STYLING */
+  header, footer {
+    background-color: oldLace;
+    width: 100%;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    text-align: right;
+  }
