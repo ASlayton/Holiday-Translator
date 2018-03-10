@@ -39,3 +39,9 @@ function writeToDom(myInnerds, myElement){
   var theElementToWriteTo = document.getElementById(myElement);
   theElementToWriteTo.innerHTML = myInnerds;
 };
+
+//GRAB USER INPUT
+function userInput(){
+  var myKey = document.getElementById("userInputText").value;
+  return myKey.toLowerCase().split(" ");
+};
