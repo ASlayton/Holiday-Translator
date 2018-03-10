@@ -45,3 +45,34 @@ function userInput(){
   var myKey = document.getElementById("userInputText").value;
   return myKey.toLowerCase().split(" ");
 };
+
+
+//MAIN FUNCTION THAT DOES THE THING
+function translatePhrase(translatorObject, buttonPushed){
+  var x = Object.keys(translatorObject);                   //Gets object names as an array
+  var y = buttonPushed;                                    //declares button pushed and language attached
+  if(y === "button1"){
+    var myLanguage = 0;                                    //Spanish language
+  }else if(y === "button2"){
+    var myLanguage = 1;                                    //German language
+  }else if(y === "button3"){
+    var myLanguage = 2;                                    //Esperanto
+  }else{
+    var myLanguage = 3;                                    //Only other, klingon
+  };
+  var myKey = userInput();                                 //Grab user input from input field
+  var textToInsert = "";
+  for(var i = 0; i < myKey.length; i++){
+    if(x.includes(myKey[i])){                              //If user input is included in the object of words
+      if(i > 0){
+        textToInsert += " " + translatorObject[myKey[i]][myLanguage];  //send back the translation of the word with a space to separate the words
+      }else{
+        textToInsert += translatorObject[myKey[i]][myLanguage];  //send back the translation of the word (no space because this is the first or only word)
+      };
+    }else{
+        textToInsert = "No Matches Found. Check your spelling or try again."; //there is no match for user input
+        break;                                              //There is not a match, get out of the loop
+    };
+  };
+  writeToDom(textToInsert, "translatedText");              //output our result
+};
