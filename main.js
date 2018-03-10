@@ -31,7 +31,9 @@ var languageObject =
   love:      ["amor", "liebe", "amo", "parmaq"],
   let:       ["dejar", "lassen", "lasu", "yInISQo\'"],
   it:	       ["eso", "es", "gi", "\'oH"],
-  snow:      ["nieve", "schnee", "nego", "peD"]
+  snow:      ["nieve", "schnee", "nego", "peD"],
+  we:        ["nosotros", "wir", "ni", "maH"],
+  a:         ["un", "ein", "a", "."] 
 };
 
 //SIMPLE WRITE TO DOM FUNCTION
