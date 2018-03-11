@@ -12,7 +12,7 @@ var languageObject =
   and:       ["y", "und", "kaj", "je"],
   hanukah:   ["hanukkah", "hanukkah", "hanukkah", "hanukah"],
   kwanzaa:   ["kwanzaa", "kwanzaa", "kwanzaa", "kwanzaa"],
-  jingle:    ["tintineo", "klimpern", "enreta", "jingle"],
+  jingle:    ["tintineo", "klimpern", "enreta", "ginKl"],
   bells:     ["campanas", "glocken", "sonoriloj", "\'In"],
   deck:      ["cubierta", "deck", "ferdeko", "choQ"],
   the:       ["el", "das", "la", "."],
@@ -48,10 +48,8 @@ function userInput(){
   return myKey.toLowerCase().split(" ");
 };
 
-
-//MAIN FUNCTION THAT DOES THE THING
-function translatePhrase(translatorObject, buttonPushed){
-  var x = Object.keys(translatorObject);                   //Gets object names as an array
+//What button was pushed
+function chooseButton(buttonPushed){
   var y = buttonPushed;                                    //declares button pushed and language attached
   if(y === "button1"){
     var myLanguage = 0;                                    //Spanish language
@@ -59,17 +57,27 @@ function translatePhrase(translatorObject, buttonPushed){
     var myLanguage = 1;                                    //German language
   }else if(y === "button3"){
     var myLanguage = 2;                                    //Esperanto
-  }else{
+  }else if (y === "button4"){
     var myLanguage = 3;                                    //Only other, klingon
+  }else{
+    var myLanguage = Math.floor(Math.random() * 4);
   };
+  return myLanguage;
+};
+
+
+//MAIN FUNCTION THAT DOES THE THING
+function translatePhrase(translatorObject, buttonPushed){
+  var x = Object.keys(translatorObject);                   //Gets object names as an array
+
   var myKey = userInput();                                 //Grab user input from input field
   var textToInsert = "";
   for(var i = 0; i < myKey.length; i++){
     if(x.includes(myKey[i])){                              //If user input is included in the object of words
       if(i > 0){
-        textToInsert += " " + translatorObject[myKey[i]][myLanguage];  //send back the translation of the word with a space to separate the words
+        textToInsert += " " + translatorObject[myKey[i]][buttonPushed];  //send back the translation of the word with a space to separate the words
       }else{
-        textToInsert += translatorObject[myKey[i]][myLanguage];  //send back the translation of the word (no space because this is the first or only word)
+        textToInsert += translatorObject[myKey[i]][buttonPushed];  //send back the translation of the word (no space because this is the first or only word)
       };
     }else{
         textToInsert = "No Matches Found. Check your spelling or try again."; //there is no match for user input
@@ -81,6 +89,7 @@ function translatePhrase(translatorObject, buttonPushed){
   generateACard();
 };
 
+//SAY THE PHRASE
 function sayAThing(myMsg){
   var msg = new SpeechSynthesisUtterance(myMsg);
   window.speechSynthesis.speak(msg);

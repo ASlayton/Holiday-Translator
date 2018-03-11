@@ -20,10 +20,11 @@
         <input type="text" name="translateMe" value="" id="userInputText">
       </div>
       <div>
-          <button type="button" name="spanishButton" id="spanishButton" onClick ="translatePhrase(languageObject,'button1')" class="language-button">Translate to Spanish</button>
-          <button type="button" name="germanButton" id="germanButton" onClick ="translatePhrase(languageObject,'button2')" class="language-button">Translate to German</button>
-          <button type="button" name="esperantoButton"  id="esperantoButton" onClick ="translatePhrase(languageObject,'button3')" class="language-button">Translate to Esperanto</button>
-          <button type="button" name="klingonButton" id="klingonButton" onClick ="translatePhrase(languageObject,'button4')" class="language-button">Translate to Klingon</button>
+          <button type="button" name="spanishButton" id="spanishButton" onClick ="translatePhrase(languageObject, chooseButton('button1'))" class="language-button">Translate to Spanish</button>
+          <button type="button" name="germanButton" id="germanButton" onClick ="translatePhrase(languageObject, chooseButton('button2'))" class="language-button">Translate to German</button>
+          <button type="button" name="esperantoButton"  id="esperantoButton" onClick ="translatePhrase(languageObject, chooseButton('button3'))" class="language-button">Translate to Esperanto</button>
+          <button type="button" name="klingonButton" id="klingonButton" onClick ="translatePhrase(languageObject, chooseButton('button4'))" class="language-button">Translate to Klingon</button>
+          <button type="button" name="luckyButton"  id="luckyButton" onClick ="translatePhrase(languageObject, chooseButton('button5'))" class="language-button">Feelin' Lucky</button>
       </div>
       <div>
         <label for="translatedText">Translated Text:</label>
