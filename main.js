@@ -60,7 +60,7 @@ function chooseButton(buttonPushed){
   }else if (y === "button4"){
     var myLanguage = 3;                                    //Only other, klingon
   }else{
-    var myLanguage = Math.floor(Math.random() * 3);
+    var myLanguage = Math.floor(Math.random() * 4);
   };
   return myLanguage;
 };
@@ -89,6 +89,7 @@ function translatePhrase(translatorObject, buttonPushed){
   generateACard();
 };
 
+//SAY THE PHRASE
 function sayAThing(myMsg){
   var msg = new SpeechSynthesisUtterance(myMsg);
   window.speechSynthesis.speak(msg);
