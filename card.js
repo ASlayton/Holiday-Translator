@@ -2,7 +2,7 @@ var myBackgrounds=["/images/cartoon-christmas-lights-border.jpg","/images/cartoo
 // "url('img_tree.png')"
 
 function randomNumber(){
-  var myNumber = Math.floor((Math.random() * (myBackgrounds.length-1)));
+  var myNumber = Math.floor((Math.random() * (myBackgrounds.length)));
   return myNumber;
 };
 
