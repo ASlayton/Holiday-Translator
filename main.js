@@ -77,6 +77,11 @@ function translatePhrase(translatorObject, buttonPushed){
     };
   };
   writeToDom(textToInsert, "translatedText");              //output our result
-  
+  sayAThing(textToInsert);
   generateACard();
+};
+
+function sayAThing(myMsg){
+  var msg = new SpeechSynthesisUtterance(myMsg);
+  window.speechSynthesis.speak(msg);
 };

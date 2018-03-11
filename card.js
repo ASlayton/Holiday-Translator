@@ -12,3 +12,4 @@ function generateACard(){
   document.getElementById("insertUserTextHere").innerHTML = document.getElementById("translatedText").value;
   document.getElementById("generatedCard").style.visibility = 'visible';
 };
+
